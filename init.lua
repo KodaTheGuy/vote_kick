@@ -18,12 +18,12 @@ minetest.register_chatcommand("vote_kick", {
 
 			on_result = function(self, result, results)
 				if result == "yes" then
-					minetest.chat_send_all("Vote passed, " ..
+					minetest.chat_send_all(minetest.colorize("#FF00E0", "Vote passed, " ..
 							#results.yes .. " to " .. #results.no .. ", " ..
 							self.name .. " will be kicked.")
 					minetest.kick_player(self.name, "The vote to kick you passed")
 				else
-					minetest.chat_send_all("Vote failed, " ..
+					minetest.chat_send_all(minetest.colorize("#FF00E0", "Vote failed, " ..
 							#results.yes .. " to " .. #results.no .. ", " ..
 							self.name .. " remains ingame.")
 				end
